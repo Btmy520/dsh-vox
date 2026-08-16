@@ -1,0 +1,46 @@
+{
+  "name": "dsh-vox",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DeepSeek Harness 输入框语音识别插件：加号旁的水平按钮盒，麦克风听写实时写入输入框，可开关“识别结束自动发送”",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/client.js",
+    "lib/index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node --check lib/client.js && node --check lib/index.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "voice",
+    "speech-recognition",
+    "webui"
+  ]
+}

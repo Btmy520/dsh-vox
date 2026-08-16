@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="170" viewBox="0 0 760 170" font-family="system-ui,'PingFang SC','Microsoft YaHei',sans-serif">
+  <!-- bar -->
+  <rect x="20" y="58" width="720" height="64" rx="16" fill="#1b1f27" stroke="#2c3340"/>
+  <!-- attach (plus) button -->
+  <rect x="36" y="72" width="36" height="36" rx="8" fill="none" stroke="#3d4656"/>
+  <path d="M54 82v16M46 90h16" stroke="#9aa7ba" stroke-width="2" stroke-linecap="round"/>
+  <!-- dsh-vox box highlight -->
+  <rect x="92" y="68" width="108" height="44" rx="10" fill="rgba(77,107,254,0.12)" stroke="rgba(77,107,254,0.55)"/>
+  <!-- mic button (recording state) -->
+  <rect x="100" y="76" width="32" height="32" rx="8" fill="none" stroke="#e5484d"/>
+  <g stroke="#e5484d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M116 82a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0v-5a3 3 0 0 1 3-3z"/>
+    <path d="M121.5 87.5v.5a5.5 5.5 0 0 1-11 0v-.5"/>
+    <line x1="116" y1="96" x2="116" y2="99"/>
+  </g>
+  <!-- waveform bars -->
+  <rect x="140" y="83" width="3" height="10" rx="1.5" fill="#e5484d"/>
+  <rect x="146" y="79" width="3" height="18" rx="1.5" fill="#e5484d"/>
+  <rect x="152" y="86" width="3" height="4" rx="1.5" fill="#e5484d"/>
+  <!-- auto-send toggle (on) -->
+  <rect x="162" y="76" width="32" height="32" rx="8" fill="rgba(77,107,254,0.18)" stroke="#4d6bfe"/>
+  <g stroke="#4d6bfe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M178 82l-6 6"/>
+    <path d="M178 82l-4 8-3-5-5-2z"/>
+  </g>
+  <!-- placeholder dots -->
+  <circle cx="216" cy="90" r="2" fill="#3d4656"/>
+  <circle cx="226" cy="90" r="2" fill="#3d4656"/>
+  <circle cx="236" cy="90" r="2" fill="#3d4656"/>
+  <!-- model select capsule -->
+  <rect x="556" y="76" width="92" height="28" rx="14" fill="none" stroke="#3d4656"/>
+  <text x="602" y="95" fill="#9aa7ba" font-size="11" text-anchor="middle">deepseek-chat</text>
+  <!-- primary send button -->
+  <rect x="664" y="74" width="60" height="32" rx="16" fill="#4d6bfe"/>
+  <path d="M688 86h14M696 80l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- labels above -->
+  <text x="54" y="50" fill="#8a94a6" font-size="11" text-anchor="middle">加号（附件）</text>
+  <text x="146" y="50" fill="#8b97f5" font-size="11" text-anchor="middle">dsh-vox 按钮盒</text>
+  <!-- captions below -->
+  <text x="36" y="152" fill="#8a94a6" font-size="11">点麦克风开始听写，文字实时写入输入框</text>
+  <text x="430" y="152" fill="#8a94a6" font-size="11">点亮 ✈ 后，停止识别自动发送</text>
+</svg>
