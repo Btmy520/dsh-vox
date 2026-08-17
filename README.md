@@ -2,6 +2,11 @@
 
 > 对着输入框说话，本机模型自动识别中英文，文字流式蹦进输入框。音频不出门，隐私自己说了算。
 
+<p align="right">
+  <img src="https://img.shields.io/badge/lang-中文-red" alt="当前语言"/>
+  <a href="./README.en.md"><img src="https://img.shields.io/badge/click_for-English-blue" alt="Switch to English"/></a>
+</p>
+
 [![version](https://img.shields.io/badge/version-0.3.0-4d6bfe)](./package.json)
 [![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![platform](https://img.shields.io/badge/platform-DeepSeek%20Harness%20Web-4d6bfe)]()
