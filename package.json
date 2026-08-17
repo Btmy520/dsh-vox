@@ -1,8 +1,8 @@
 {
   "name": "dsh-vox",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
-  "description": "DeepSeek Harness 输入框语音识别插件：加号旁的水平按钮盒，麦克风听写实时写入输入框，可开关“识别结束自动发送”",
+  "description": "DeepSeek Harness 语音输入插件：输入框旁的麦克风按钮，本地 Whisper 流式识别（自动判断中英文），文字实时写入输入框",
   "type": "module",
   "main": "lib/index.js",
   "exports": {

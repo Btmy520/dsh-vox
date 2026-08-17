@@ -5,7 +5,7 @@
   <rect x="36" y="72" width="36" height="36" rx="8" fill="none" stroke="#3d4656"/>
   <path d="M54 82v16M46 90h16" stroke="#9aa7ba" stroke-width="2" stroke-linecap="round"/>
   <!-- dsh-vox box highlight -->
-  <rect x="92" y="68" width="108" height="44" rx="10" fill="rgba(77,107,254,0.12)" stroke="rgba(77,107,254,0.55)"/>
+  <rect x="92" y="68" width="70" height="44" rx="10" fill="rgba(77,107,254,0.12)" stroke="rgba(77,107,254,0.55)"/>
   <!-- mic button (recording state) -->
   <rect x="100" y="76" width="32" height="32" rx="8" fill="none" stroke="#e5484d"/>
   <g stroke="#e5484d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
@@ -17,16 +17,10 @@
   <rect x="140" y="83" width="3" height="10" rx="1.5" fill="#e5484d"/>
   <rect x="146" y="79" width="3" height="18" rx="1.5" fill="#e5484d"/>
   <rect x="152" y="86" width="3" height="4" rx="1.5" fill="#e5484d"/>
-  <!-- auto-send toggle (on) -->
-  <rect x="162" y="76" width="32" height="32" rx="8" fill="rgba(77,107,254,0.18)" stroke="#4d6bfe"/>
-  <g stroke="#4d6bfe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M178 82l-6 6"/>
-    <path d="M178 82l-4 8-3-5-5-2z"/>
-  </g>
   <!-- placeholder dots -->
-  <circle cx="216" cy="90" r="2" fill="#3d4656"/>
-  <circle cx="226" cy="90" r="2" fill="#3d4656"/>
-  <circle cx="236" cy="90" r="2" fill="#3d4656"/>
+  <circle cx="190" cy="90" r="2" fill="#3d4656"/>
+  <circle cx="200" cy="90" r="2" fill="#3d4656"/>
+  <circle cx="210" cy="90" r="2" fill="#3d4656"/>
   <!-- model select capsule -->
   <rect x="556" y="76" width="92" height="28" rx="14" fill="none" stroke="#3d4656"/>
   <text x="602" y="95" fill="#9aa7ba" font-size="11" text-anchor="middle">deepseek-chat</text>
@@ -35,8 +29,8 @@
   <path d="M688 86h14M696 80l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   <!-- labels above -->
   <text x="54" y="50" fill="#8a94a6" font-size="11" text-anchor="middle">加号（附件）</text>
-  <text x="146" y="50" fill="#8b97f5" font-size="11" text-anchor="middle">dsh-vox 按钮盒</text>
+  <text x="127" y="50" fill="#8b97f5" font-size="11" text-anchor="middle">dsh-vox 按钮盒</text>
   <!-- captions below -->
-  <text x="36" y="152" fill="#8a94a6" font-size="11">点麦克风录音，停止后本地 Whisper 自动识别中英文并写入输入框</text>
-  <text x="430" y="152" fill="#8a94a6" font-size="11">点亮 ✈ 后，识别完成自动发送</text>
+  <text x="36" y="152" fill="#8a94a6" font-size="11">点麦克风录音，文字每约 5 秒流式写入输入框，停止后自动精修</text>
+  <text x="470" y="152" fill="#8a94a6" font-size="11">本地 Whisper 识别，中英文自动判断</text>
 </svg>

@@ -1,8 +1,8 @@
 # 🎙️ dsh-vox — 本地 Whisper 语音输入插件
 
-> 对着输入框说话，本机模型自动识别中英文，字自己流进输入框。音频不出门，隐私自己说了算。
+> 对着输入框说话，本机模型自动识别中英文，文字流式蹦进输入框。音频不出门，隐私自己说了算。
 
-[![version](https://img.shields.io/badge/version-0.2.0-4d6bfe)](./package.json)
+[![version](https://img.shields.io/badge/version-0.3.0-4d6bfe)](./package.json)
 [![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![platform](https://img.shields.io/badge/platform-DeepSeek%20Harness%20Web-4d6bfe)]()
 [![built with](https://img.shields.io/badge/built%20with-DeepSeek%20Harness-4d6bfe)](https://github.com/deepseek-ai/deepseek-harness)
@@ -18,7 +18,7 @@
 - 🌐 **语言自动判断**：`-l auto` 让模型自己听——中文、英文、甚至中英混说，自动判定
 - 🔒 **隐私**：音频只在「浏览器 ↔ 本机 Host」之间流转，不上传任何第三方
 - ✏️ **自动标点**：Whisper 输出自带标点和大小写，比浏览器引擎强一个档次
-- ✈️ **自动发送开关**：点亮后识别完成自动提交；不点亮则文本留在草稿里随便改
+- ⚡ **流式输出**：录音期间每 5 秒把已录内容送去识别一次，文字边录边出；停止后自动做最后一遍全量精修
 - ☁️ **可选云端模式**：联网用户想省资源，改一行配置就能切到免费额度的云端 Whisper API
 
 ## 🖥️ 电脑配置要求
@@ -121,24 +121,24 @@ dsh plugin --profile web add github:Btmy520/dsh-vox
 
 ## 🎬 使用
 
-1. 点 🎤 开始录音，按钮变红脉动；再点一下停止。
-2. 稍等片刻（模型在本地跑），识别文本自动接进输入框草稿——听写前已有的文字不会丢，自动补空格。
-3. 想说完就发：先点亮 ✈️，识别完成自动发送。
+1. 点 🎤 开始录音，按钮变红脉动；录音期间文字**每隔约 5 秒流式更新**进输入框草稿。
+2. 再点一下停止，插件对整段录音做最后一遍识别精修，最终文本留在草稿里，随便改、手动发送。
+3. 听写前输入框里已有的文字不会丢，插件自动补空格接在后面。
 4. 说中文、说英文、混着说都行，模型自己判断语言。
 
 ## 🧠 工作原理
 
 ```
 点 🎤 → getUserMedia 采麦 → MediaRecorder 录 webm/opus
-  → 停止后 base64 POST 到 Host（本机 dsh 进程）
+  → 录音期间每 5 秒：已录音频 base64 POST 到 Host（本机 dsh 进程）
     ├─ local 模式：ffmpeg 转 16k wav → whisper-cli -l auto → 文本
     └─ cloud 模式：直连 OpenAI 兼容 /audio/transcriptions（language 留空=自动）
-  → 文本回填输入框草稿（✈️ 开着就提交）
+  → 文本流式写回输入框草稿；停止后再做一遍全量精修
 ```
 
 ## ❓ 常见问题
 
-**为什么是录完才出字，不能实时蹦字？** v1 采用整段识别，换来模型精度和语言自动判断；流式分段识别在路线图上，欢迎 PR。
+**流式识别的节奏是怎样的？** 录音期间每 5 秒把「目前录到的所有音频」整体识别一次并刷新草稿（模型每次重载约 1 秒，所以实际约 5~7 秒跳一次字）；停止时做最后一遍全量识别，精修措辞和标点。想跳字更快，把代码里 `5000` 这个毫秒数调小即可（模型加载耗时不变，太短了会频繁排队）。
 
 **中文识别不准？** 换大模型：把 `model` 换成 `ggml-small.bin`（466MB）或 `ggml-medium.bin`（1.5GB），重新下载即可。
 
