@@ -37,6 +37,6 @@
   <text x="54" y="50" fill="#8a94a6" font-size="11" text-anchor="middle">加号（附件）</text>
   <text x="146" y="50" fill="#8b97f5" font-size="11" text-anchor="middle">dsh-vox 按钮盒</text>
   <!-- captions below -->
-  <text x="36" y="152" fill="#8a94a6" font-size="11">点麦克风开始听写，文字实时写入输入框</text>
-  <text x="430" y="152" fill="#8a94a6" font-size="11">点亮 ✈ 后，停止识别自动发送</text>
+  <text x="36" y="152" fill="#8a94a6" font-size="11">点麦克风录音，停止后本地 Whisper 自动识别中英文并写入输入框</text>
+  <text x="430" y="152" fill="#8a94a6" font-size="11">点亮 ✈ 后，识别完成自动发送</text>
 </svg>
