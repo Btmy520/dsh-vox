@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 🐳 DeepSeek Harness 官方仓库
+    url: https://github.com/deepseek-ai/deepseek-harness
+    about: 插件平台本身（DSH）的问题请到官方仓库反馈
+  - name: 🔊 whisper.cpp
+    url: https://github.com/ggml-org/whisper.cpp
+    about: 识别引擎本身的问题请到 whisper.cpp 仓库反馈

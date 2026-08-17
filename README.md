@@ -21,6 +21,17 @@
 - ⚡ **流式输出**：录音期间每 5 秒把已录内容送去识别一次，文字边录边出；停止后自动做最后一遍全量精修
 - ☁️ **可选云端模式**：联网用户想省资源，改一行配置就能切到免费额度的云端 Whisper API
 
+## 🧰 技术栈
+
+| 层 | 技术 |
+| --- | --- |
+| 插件平台 | [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) web 插件协议（`dsh.client` bundle + `__ModuleLoader__` 加载 + Slot 槽位注册） |
+| 前端 | React 18（`createElement` / hooks）、`getUserMedia` 采麦、`MediaRecorder` 录音、`FileReader`/`fetch` |
+| 后端（Host） | Node.js ESM、`webServer` 路由、`child_process`、[ffmpeg](https://ffmpeg.org) 音频转码 |
+| 语音识别 | [whisper.cpp](https://github.com/ggml-org/whisper.cpp)（`whisper-cli`，`-l auto` 语言自动检测）+ `ggml-base` 模型 |
+| 可选云端 | OpenAI 兼容 `POST /audio/transcriptions`（[Groq](https://console.groq.com) / [SiliconFlow](https://siliconflow.cn) 等免费额度 API） |
+| 打包分发 | npm 包：Client 半为手写 `__ModuleLoader__` bundle（纯 JS，无构建步骤），Host 半为原生 ESM |
+
 ## 🖥️ 电脑配置要求
 
 | 项目 | 最低 | 推荐 |
